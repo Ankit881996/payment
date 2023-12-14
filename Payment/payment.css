@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+@font-face {
+    font-family: customFont;
+    font-display: swap;
+    font-weight: 400;
+    src: url(../fontFamily/customFont.woff2) format("woff2");
+}
+:root {
+    --placeHolder: hsla(180, 36%, 10%, 0.5);
+}
+*{
+    user-select: none;
+}
+.header{
+    z-index: 1;
+}
+.section {
+    width: 100%;
+    height: calc(100vh - var(--headerHeight));
+    max-height: 660px;
+    position: absolute;
+    top: var(--headerHeight);
+    display: flex;
+    justify-content: center;
+}
+
+.paymentSources {
+    height: 100%;
+    max-width: 290px;
+    overflow: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.source {
+    padding: 30px 20px;
+    background: var(--light30);
+    backdrop-filter: blur(5px);
+    border-radius: 0px var(--radius) var(--radius) 0px;
+    height: calc(100% - 30px);
+    margin: 0px auto;
+    margin-bottom: 30px;
+    overflow: auto;
+}
+
+.source::-webkit-scrollbar {
+    display: none;
+}
+
+.qrCode img {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.qrCode p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.miniText {
+    font-size: 10px;
+    text-align: center;
+}
+.smallText{
+    font-size: 12px;
+    line-height: 14px;
+    display: block;
+    text-align: center;
+}
+.inputBox {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.btnDisable {
+    background: var(--placeHolder);
+    cursor: not-allowed;
+}
+
+.noScrollBars::-webkit-scrollbar {
+    display: none;
+}
+
+.sourcesBox {
+    display: flex;
+}
+
+.allSource {
+    background: var(--subMainColor);
+    height: calc(100% - 30px);
+    border-radius: var(--radius) 0px 0px var(--radius);
+    position: relative;
+    overflow-x: hidden;
+
+}
+
+.allSource div {
+    color: var(--mainColor);
+    width: inherit;
+    cursor: pointer;
+    text-align: center;
+    padding: 7px;
+    font-size: 14px;
+}
+
+.icon_twentytwo::before {
+    mask-image: url(Image/upi.svg);
+    -webkit-mask-image: url(Image/upi.svg);
+}
+
+.icon_twentythree::before {
+    mask-image: url(Image/paypal.svg);
+    -webkit-mask-image: url(Image/paypal.svg);
+}
+
+.icon_twentyfour::before {
+    mask-image: url(Image/banking.svg);
+    -webkit-mask-image: url(Image/banking.svg);
+}
+
+div.source-indicator {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 80px;
+    background: rgba(221, 239, 239,.3);
+    transition: all .3s;
+    cursor: default;
+}
+
+.bankDetals {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.bankDetals span {
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+.bankDetals :nth-child(odd) {
+    font-size: 13px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.info,
+.otherinfo {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    max-height: calc(100% - 30px);
+    width: 290px;
+    border-radius: var(--radius);
+}
+
+.recivingDate {
+    font-size: 12px;
+    text-align: right;
+}
+
+.flightDetails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 10px;
+}
+
+.hotelDetails {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.passangersDetails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 14px;
+}
+
+.email_number {
+    margin: 10px 0px;
+    font-size: 10px;
+}
+
+.totalDetails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.totalDetails :nth-child(odd) {
+    text-align: right;
+}
+.totalDetails .totalHeading{
+    grid-area: 1/1/1/-1;
+    text-align: left;
+}
+
+.otherinfo {
+    height: auto;
+    overflow-x: visible;
+}
+.lastRaw{
+    position: relative;
+}
+.currency{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: fit-content;
+    background: var(--subMainColor);
+    color: var(--mainColor);
+    padding: 3px 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+
+/* trustpilot box */
+.reviewBox {
+    width: 100%;
+    padding: 20px;
+    background: white;
+    margin-bottom: 20px;
+    text-decoration: none;
+    animation: reviewAnim 1s 1;
+}
+@keyframes reviewAnim {
+    from{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+.reviewBox:last-child{
+    margin-bottom: 0px;
+}
+
+.RBHead {
+    display: flex;
+    justify-content: space-between;
+}
+
+.RBImage {
+    height: 20px;
+}
+
+.RBDate {
+    font-size: 12px;
+    white-space: nowrap;
+    align-self: flex-end;
+    color: #ADADAD;
+}
+.RBBody{
+    padding: 10px 0px;
+}
+.RBText {
+    font-family: customFont,sans-serif,arial;
+    font-size: 14px;
+    letter-spacing: .5px;
+    display: block;
+    font-weight: 500;
+    line-height: 20px;
+    color: black;
+}
+.RBFooter{
+    display: flex;
+    justify-content: space-between;
+}
+
+.RBName,.RBLocation{
+    font-size: 14px;
+    color: #6C6C85;
+    position: relative;
+}
+.RBName{
+    font-size: 12px;
+    color: #ADADAD;
+    display: flex;
+    align-items: flex-end;
+}
+.RBLocation::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: calc(100% + 5px);
+    width: 14px;
+    height: 17px;
+    background: url(Image/location.svg);
+    background-size: cover;
+    background-position: center;
+}
+.allreview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--subMainColor);
+    border-radius: var(--radius);
+    color: var(--mainColor);
+    padding: 10px;
+}
+
+
+.confirmBox{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: var(--dark70);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.confirmMainBox{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    --subMainColor:rgb(221, 239, 239);
+    --mainColor:hsl(180, 37%, 10%);
+}
+.confirmBox .button{
+    font-weight: bold;
+}
+.cancel{
+    background: rgba(221, 239, 239,.3);
+    color: var(--subMainColor);
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    padding: 10px;
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+}
